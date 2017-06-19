@@ -1,0 +1,33 @@
+<template name="calendar">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+  <div class="row">
+    <div class="well col-sm-offset-4 col-sm-4">
+    <form id="newEvent">
+      <div class="form-group">
+        <input class="form-control" type="text" id="eventTitle" placeholder="Title" required/>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" id="eventDesc" placeholder="Description" required/>
+      </div>
+        <div class="form-group input-group date" data-provide="datepicker">
+          <input type="text" class="form-control" id="eventDate"  required>
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+          </div>
+        </div>
+      <button type="submit" class="btn btn-success btn-block ">Create</button>
+    </form>
+   </div>
+ </div>
+   {{#each listEvents}}
+   <div class="panel panel-primary">
+     <div class="panel-heading">{{title}}-{{description}}
+       <span id="deleteEvent" class="pointer pull-right glyphicon glyphicon-remove"></span>
+      </div>
+     <div class="panel-body"><h3>{{date}}<small>{{createdAt}}</small></h3></div>
+   </div>
+
+   {{/each}}
+</template>

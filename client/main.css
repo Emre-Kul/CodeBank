@@ -1,0 +1,29 @@
+textarea{
+  resize: none;
+}
+.note-box{
+  height : 190px;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 55px;
+}
+.pointer{
+  cursor: pointer;
+}
+.gly-span{
+  padding: 5px;
+}
+.category-span{
+  height:30px;
+  padding:5px;
+  background-color:#80d4ff;
+  color: shadow;
+  display: inline-block;
+}
+.opacity-50{
+  opacity: 0.5;
+}
+.top-buffer{
+  margin-top:10px;
+}

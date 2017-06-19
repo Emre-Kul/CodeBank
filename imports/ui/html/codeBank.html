@@ -1,0 +1,43 @@
+<template name="codeBank">
+  <div class="row">
+    <div class=" col-md-3">
+      {{> codeBankLeft}}    
+    </div>
+    <div class="col-md-9">
+      <form id="newCode">
+        <input type="text" id="codeName" class="form-group form-control" placeholder="Name"/>
+        <div class="form-group">
+          {{> categorySelect}}
+        </div>
+        <textarea class="form-group form-control" rows="10" id="codeContent"></textarea>
+        <button type="submit" class="btn btn-primary btn-block">Save</button>
+      </form>
+    </div>
+  </div>
+</template>
+
+<template name="codeBankShow">
+  <div class="row">
+    <div class=" col-md-3">
+      {{> codeBankLeft}}    
+    </div>
+    <div class="col-md-9">
+      {{#with getActiveCode}}
+        <h1>{{name}}</h1>
+        <p>{{content}}</p>
+      {{/with}}
+    </div>
+  </div>
+</template>
+<template name="codeBankLeft">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+          Left Menu
+    </div>
+    <div class="panel-body">
+      {{#each listCodes}}
+        <a href="\codes\{{_id}}"><button class="btn btn-block btn-success">{{name}}</button></a>
+      {{/each}}
+    </div>
+  </div>
+</template>
