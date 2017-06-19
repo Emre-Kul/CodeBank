@@ -30,14 +30,22 @@
   </div>
 </template>
 <template name="codeBankLeft">
-  <div class="panel panel-primary">
+  <div class="panel panel-info">
     <div class="panel-heading">
-          Left Menu
+          <a href="\codes\">HOME</a>
     </div>
     <div class="panel-body">
+      <table class="table">
+      <tbody>
       {{#each listCodes}}
-        <a href="\codes\{{_id}}"><button class="btn btn-block btn-success">{{name}}</button></a>
+        <tr>
+        <td><a href="\codes\{{_id}}">{{name}}</a></td>
+        <td><span id="delete-code" class="glyphicon glyphicon-remove pointer"></span></td>
+        </tr>
       {{/each}}
+    </tbody>
+  </table>
+
     </div>
   </div>
 </template>

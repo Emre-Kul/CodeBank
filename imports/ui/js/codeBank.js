@@ -12,6 +12,12 @@ Template.codeBankLeft.helpers({
         return Meteor.CodeColMethods.list();
     }
 });
+Template.codeBankLeft.events({
+    'click #delete-code' : function(e){
+        Meteor.CodeColMethods.remove(this._id);
+    }
+
+});
 Template.codeBank.events({
     "submit #newCode" : function(e){
         e.preventDefault();
