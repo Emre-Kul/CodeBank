@@ -1,0 +1,1 @@
+General purpose meteor application for personel use
