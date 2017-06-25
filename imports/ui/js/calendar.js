@@ -18,6 +18,9 @@ Template.calendar.events({
   'submit #newEvent': function(e){
     e.preventDefault();
     Meteor.CalColMethods.insert($('#eventTitle').val(),$('#eventDesc').val(),$('#eventDate').val());
+      $("#newEvent :input").each(function(){
+            $(this).val("");
+        });
   },
   'click #deleteEvent' : function(e){
       Meteor.CalColMethods.remove(this._id);

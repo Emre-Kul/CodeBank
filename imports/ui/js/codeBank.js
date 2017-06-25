@@ -25,6 +25,9 @@ Template.codeBank.events({
         var content = $("#codeContent").val();
         var tags = "empty";
         Meteor.CodeColMethods.insert(name,content,tags);
+        $("#newCode :input").each(function(){
+            $(this).val("");
+        });
     },
 });
 
